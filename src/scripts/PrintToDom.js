@@ -7,8 +7,12 @@ APIManager.getAllLocations().then(result => {
 
 function printToDOM(locations) {
     console.log(locations)
-    const printableLocations = JSON.stringify(locations, null, 4);
-    listOfPlaces.innerHTML = printableLocations;
+    let locationObject = ""
+    for (let index = 0; index < locations.length; index++) {
+        locationObject = locations[index];
+        listOfPlaces.innerHTML += locationObject.name + "," + " " + locationObject.country + "<br>";
+        
+    }
 }
 
 module.exports = printToDOM
