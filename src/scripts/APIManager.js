@@ -18,7 +18,7 @@ const APIManager = Object.create(null, {
         }
     },
 
-    deleteEntry: {
+    deleteLocation: {
         value: (id) => {
             return fetch(`http://localhost:8088/locations/${id}`, {
                 method: "DELETE"

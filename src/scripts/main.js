@@ -1,7 +1,8 @@
 const LocationForm = require("./LocationForm")
 const verifyLocation = require("./LocationManager")
+const printToDOM = require("./PrintToDom")
 const APIManager = require("./APIManager")
-// const verifyLocation = require("./Login")
+
 
 
 // Render the location form
@@ -15,7 +16,15 @@ document.querySelector("#addLocationButton").addEventListener("click", () => {
         "country": document.querySelector("#country").value,
     }
     verifyLocation(locationToBeAdded)
-    // APIManager.saveLocation(locationToBeAdded)
-    // check to see if location already exists
-    // verifyLocation(locationToBeAdded);
+
+    document.querySelector("#deleteLocationButton").addEventListener("click", () => {
+        // Get form field values
+        // Create object from them
+        const locationToBeDeleted = {
+            "name": document.querySelector("#name").value,
+            "country": document.querySelector("#country").value,
+        }
+        APIManager.deleteLocation(locationToBeDeleted)
+    })
+    printToDOM()
 })

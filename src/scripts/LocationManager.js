@@ -11,27 +11,25 @@ const verifyLocation = () => {
     APIManager.getAllLocations().then(result => {
         locationVerification(result);
     });
-    // verifyUser(result);
+    // testing to see if location is in database
     function locationVerification(locations) {
         let currentLocation = locations.find(location => {
             return location.name === newLocation.name;
         });
-        
+        // if True
         if (currentLocation) {
 
             alert("Location already exists in database")
-            //take them to a new view, load landing page
-            // landing()
+            LocationForm.clearForm()
         }
         else {
-
+            // save to database
                 APIManager.saveLocations(newLocation)
                 .then(() => {
                     // Clear the form fields
                     LocationForm.clearForm()
                     alert("A new favorite place has been added");
-                    //take them to a new view, load landing page
-                    // landing()
+
                 })
             }
 
