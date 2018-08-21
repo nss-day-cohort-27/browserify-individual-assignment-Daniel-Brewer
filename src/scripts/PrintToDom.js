@@ -8,9 +8,10 @@ APIManager.getAllLocations().then(result => {
 function printToDOM(locations) {
     console.log(locations)
     let locationObject = ""
-    for (let index = 0; index < locations.length; index++) {
-        locationObject = locations[index];
+    for (let i = 0; i < locations.length; i++) {
+        locationObject = locations[i];
         listOfPlaces.innerHTML += locationObject.name + "," + " " + locationObject.country + "<br>";
+
         
     }
 }

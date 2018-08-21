@@ -19,8 +19,8 @@ const APIManager = Object.create(null, {
     },
 
     deleteLocation: {
-        value: (id) => {
-            return fetch(`http://localhost:8088/locations/${id}`, {
+        value: (Id) => {
+            return fetch(`http://localhost:8088/locations/${Id}`, {
                 method: "DELETE"
             })
                 .then(r => r.json())

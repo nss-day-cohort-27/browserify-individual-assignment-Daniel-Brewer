@@ -17,7 +17,6 @@ const LocationForm = Object.create(null, {
                     <input required type="text" id="country" placeholder="country">    
                 </fieldset>
                 <button id="addLocationButton">Add Location</button>
-                <button id="deleteLocationButton">Delete Location</button>
             `
         }
     }
