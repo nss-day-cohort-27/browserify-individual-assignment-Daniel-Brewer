@@ -1,4 +1,6 @@
 const LocationForm = require("./LocationForm")
+const verifyLocation = require("./LocationManager")
+const APIManager = require("./APIManager")
 // const verifyLocation = require("./Login")
 
 
@@ -12,6 +14,8 @@ document.querySelector("#addLocationButton").addEventListener("click", () => {
         "name": document.querySelector("#name").value,
         "country": document.querySelector("#country").value,
     }
+    verifyLocation(locationToBeAdded)
+    // APIManager.saveLocation(locationToBeAdded)
     // check to see if location already exists
     // verifyLocation(locationToBeAdded);
 })

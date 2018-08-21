@@ -1,4 +1,3 @@
-console.log("i am here");
 const LocationForm = Object.create(null, {
     clearForm: {
         value: () => {
@@ -8,7 +7,6 @@ const LocationForm = Object.create(null, {
     },
     renderLocationForm: {
         value: () => {
-            console.log("I got here");
             return `
                 <fieldset class="locationForm">
                     <label for="name">name</label>
